@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'Create_Lead.dart';
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'LeadsDashboardScreen.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 import 'package:http/http.dart'as http;
@@ -16,7 +16,6 @@ class MyLeadsView extends StatefulWidget {
 class URLS {
   static const String BASE_URL = 'https://crm.botsolutions.tech';
 }
-
 class _MyLeadsViewState extends State<MyLeadsView> {
   var isLoading = false;
   final databaseReference = FirebaseDatabase.instance;
@@ -24,12 +23,10 @@ class _MyLeadsViewState extends State<MyLeadsView> {
   String id;
   bool flag=false;
   var ref;
-
   @override
   void initState() {
     _initfirebase();
   }
-
   _initfirebase() {
     flag = true;
     uuid = FirebaseAuth.instance.currentUser.uid.toString();
@@ -40,12 +37,12 @@ class _MyLeadsViewState extends State<MyLeadsView> {
     await ref.child(uuid).once().then((DataSnapshot snapshot) {
     id=snapshot.value["AssignedLead"];
     });
-
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:AppBar(
+          backgroundColor: Colors.black,
             title:Text("LeadsView")),
         body:isLoading
             ? Center(
@@ -55,7 +52,7 @@ class _MyLeadsViewState extends State<MyLeadsView> {
         floatingActionButton:Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           FloatingActionButton(
             elevation: 4.0,
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.black,
             child: Icon(Icons.sync),
             onPressed: () async {
               await _loadFromApi();
@@ -66,7 +63,7 @@ class _MyLeadsViewState extends State<MyLeadsView> {
           ),
           FloatingActionButton(
             elevation: 4.0,
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.black,
             child: Icon(Icons.add),
             onPressed: () {
               Navigator.push(
@@ -89,6 +86,9 @@ class _MyLeadsViewState extends State<MyLeadsView> {
       });
       var leadsdata = List<LeadsModel>();
       if (response.statusCode == 200){
+        setState(() {
+          isLoading = false;
+        });
         var LeadsJson = json.decode(response.body);
         print(LeadsJson);
         DBProvider.db.addnewLead(LeadsModel.fromJson(LeadsJson));
@@ -99,12 +99,10 @@ class _MyLeadsViewState extends State<MyLeadsView> {
         return leadsdata;
       }
       await Future.delayed(const Duration(seconds: 1));
-
       setState(() {
         isLoading = false;
       });
     }
-
   _loadFromApi() async {
     setState(() {
       isLoading = true;
@@ -114,10 +112,7 @@ class _MyLeadsViewState extends State<MyLeadsView> {
     setState(() {
       isLoading = false;
     });
-    _buildLeadsListView();
   }
-
-
   _buildLeadsListView() {
     return FutureBuilder(
         future: DBProvider.db.getAllLeads(),
@@ -137,14 +132,14 @@ class _MyLeadsViewState extends State<MyLeadsView> {
                       },
                       leading: CircleAvatar(
                         radius: 22.5,
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.black,
                         child: new CircleAvatar(
                           radius: 21,
                           backgroundColor: Colors.white,
                           child: Text(
                             "${snapshot.data[index].id}",
                             style:
-                            TextStyle(fontSize: 15.0, color: Colors.pink),
+                            TextStyle(fontSize: 15.0, color: Colors.black),
                           ),
                         ),
                       ),
@@ -152,7 +147,7 @@ class _MyLeadsViewState extends State<MyLeadsView> {
                       subtitle: Text('${snapshot.data[index].company}'),
                       trailing: IconButton(
                           icon: Icon(Icons.phone),
-                          color: Colors.blue,
+                          color: Colors.black,
                           onPressed: () {
                             //  _launchPhoneURL();
                             UrlLauncher.launch(

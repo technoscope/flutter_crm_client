@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'leads_NotesView.dart';
 import 'leads_TasksView.dart';
 import 'leads_model.dart';

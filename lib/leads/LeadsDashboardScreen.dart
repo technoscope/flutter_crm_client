@@ -30,6 +30,7 @@ class _LeadsDashboardScreenState extends State<LeadsDashboardScreen> {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.black,
             leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {Navigator.pop(context); },),
             bottom: TabBar(
               tabs: [

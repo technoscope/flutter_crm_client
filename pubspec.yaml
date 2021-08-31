@@ -37,23 +37,21 @@ dependencies:
   flutter_email_sender: ^5.0.2
   firebase_database: ^7.1.0
   sqflite: ^2.0.0+3
+  google_maps_flutter: ^2.0.6
   path_provider: ^2.0.2
   intl: ^0.17.0
   dropdown_formfield: ^0.1.3
   flutter_switch: ^0.3.2
   data_connection_checker: ^0.3.4
-
-
+  location: ^4.3.0
+  flutter_polyline_points: ^1.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -67,12 +65,12 @@ flutter:
     - logo.png
     - crm_logo_white.png
     - logo_blue.png
+    - attendance.png
+    - task.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

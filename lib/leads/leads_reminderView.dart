@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'leads_model.dart';
 
 class leads_reminderView extends StatefulWidget {
@@ -79,12 +79,9 @@ class _leads_reminderViewState extends State<leads_reminderView> {
               }
             }));
   }
-
 }
-
 class Reminders {
   Reminders({this.assigned, this.id, this.dateCreated, this.content});
-
   String assigned;
   String id;
   String dateCreated;

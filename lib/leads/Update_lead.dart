@@ -5,9 +5,9 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'MyLeadsView.dart';
-import 'StaffModel.dart';
+import '../StaffModel.dart';
 import 'leads_model.dart';
 class Update_lead extends StatefulWidget {
   LeadsModel lead = new LeadsModel();
@@ -480,7 +480,7 @@ class _Update_leadState extends State<Update_lead> {
     String is_public="$_isPublic";
 ///////////////////////////////
     var headers = {
-      'authtoken': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiRmx1dHRlckNSTSIsIm5hbWUiOiJBaG1hZCBSZWhtYW4iLCJwYXNzd29yZCI6bnVsbCwiQVBJX1RJTUUiOjE2Mjg1OTQwOTh9.-NHttd3B7ejKI1SrqkZpAGonz6clpF9EBnmcU22_2HE',
+      'authtoken': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiRmx1dHRlckNSTSIsIm5hbWUiOiJieSBLaGFuIEsiLCJwYXNzd29yZCI6bnVsbCwiQVBJX1RJTUUiOjE2MzAzMTc1Njl9.BELz8NtK_2IwI5PZkaqgZLdgSKDaZ1a5t0JaJduqtFw',
       'Content-Type': 'text/plain',
       'Cookie': 'csrf_cookie_name=0d5c9c8766574d68f79e782b87a9a0e1; sp_session=b3bd6d52a288aa16d410911c544dbf514cc35990'
     };

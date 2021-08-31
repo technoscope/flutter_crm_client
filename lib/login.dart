@@ -22,16 +22,20 @@ class _loginState extends State<login> {
       Firebase.initializeApp();
       _timer = new Timer(const Duration(milliseconds: 300), () {
         setState(() {
-          String uuid = FirebaseAuth.instance.currentUser.uid;
-          if (uuid != null) {
-            _staffstatus(uuid);
-          }else {
+          try{
+            String uuid = FirebaseAuth.instance.currentUser.uid;
+            if (uuid != null) {
+              _staffstatus(uuid);
+            }else if(uuid==null) {
+              flag=true;
+              print("ssssssssssssssssssss");
+            }
+          }catch(Exception){
             flag=true;
+          }finally{
           }
         });
       });
-
-
   }
   _staffstatus(String uuid) async {
     final databaseReference = FirebaseDatabase.instance;
@@ -257,7 +261,6 @@ class _loginState extends State<login> {
       setState(() {
         _visibilityLoadingScreen = false;
       });
-      print("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
     Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => DashboardScreen()));
     } on FirebaseAuthException catch (e) {

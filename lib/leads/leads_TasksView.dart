@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'leads_model.dart';
 
 class leads_TasksView extends StatefulWidget {

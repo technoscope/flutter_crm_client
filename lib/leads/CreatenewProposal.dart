@@ -3,7 +3,7 @@ import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'Lead_proposal.dart';
 import 'leads_model.dart';
 
@@ -20,13 +20,11 @@ LeadsModel proposal;
 _CreatenewProposalState(LeadsModel proposal) {
 this.proposal = proposal;
 }
-
   String _status;
   String _related;
   String _assigned;
   String _currency;
   String _discount;
-
   final _formKey = GlobalKey<FormState>();
   TextEditingController subjectController = TextEditingController();
   TextEditingController addressController = TextEditingController();
@@ -416,7 +414,6 @@ this.proposal = proposal;
         currency: currencyController.text,
         discounttype: discounttypeController.text,
         tags: tagsController.text,
-
       )
       );
       Fluttertoast.showToast(msg: "New Proposal Added");

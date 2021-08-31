@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'CreatenewProposal.dart';
-import 'Database/db_provider.dart';
+import '../Database/db_provider.dart';
 import 'Proposal_View.dart';
 import 'leads_model.dart';
 

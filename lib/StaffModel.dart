@@ -191,6 +191,7 @@ class StaffModel {
     googleAuthSecret=map.value["google_auth_secret"],
     fullName=map.value["full_name"],
     permissions=map.value["permissions"];
+
   factory StaffModel.fromJson(Map<String, dynamic> json) => StaffModel(
       staffid: json["staffid"],
       email: json["email"],

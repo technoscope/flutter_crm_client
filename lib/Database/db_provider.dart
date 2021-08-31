@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import '../Lead_proposal.dart';
+import '../leads/Lead_proposal.dart';
 import '../StaffModel.dart';
-import '../leads_NotesView.dart';
-import '../leads_TasksView.dart';
-import '../leads_model.dart';
-import '../leads_reminderView.dart';
+import '../leads/leads_NotesView.dart';
+import '../leads/leads_TasksView.dart';
+import '../leads/leads_model.dart';
+import '../leads/leads_reminderView.dart';
 
 class DBProvider {
   static Database _database;
